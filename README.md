@@ -1,4 +1,4 @@
-# Solar Dynamic Wallpaper
+# 🌅🌌 Solar Dynamic Wallpaper
 
 ## Generate your own prettier version of macOS's "Solar Gradients" dynamic wallpaper.
 
