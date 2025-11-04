@@ -20,7 +20,7 @@ See the [**Screenshots**](#screenshots) section for how it looks by default.
 
 ### Setup
 
-Just run `npm install`. This will install dependencies and run a script which installs https://github.com/mczachurski/wallpapper, the application which will compile the gradients into a dynamic wallpaper file.
+Just run `npm install`. This will install dependencies and run a script which installs [mczachurski/wallpapper](https://github.com/mczachurski/wallpapper), the application which will compile the gradients into a dynamic wallpaper file.
 
 ## Usage
 
