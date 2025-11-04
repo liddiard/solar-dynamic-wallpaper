@@ -20,7 +20,7 @@ See the [**Screenshots**](#screenshots) section for how it looks by default.
 
 ### Setup
 
-Just run `npm install`. This will install dependencies and run a script which installs https://github.com/mczachurski/wallpapper, the application which will compile the gradients into a dynamic wallpaper file.
+Just run `npm install`. This will install dependencies and run a script which installs [mczachurski/wallpapper](https://github.com/mczachurski/wallpapper), the application which will compile the gradients into a dynamic wallpaper file.
 
 ## Usage
 
@@ -36,7 +36,10 @@ Replace `[PROJECT_NAME]` with one of:
 - `macbook-pro-14`
 - `macbook-pro-16`
 
-This will spin up a Playwright-controlled browser which takes screenshots for various times of day and uses [wallpapper] to assemble them into an `output.heic` file in the `images/` directory. To set this gradient as your wallpaper on macOS, first change your wallpaper to the built-in "Solar Gradients" wallpaper. Then, right click on the output.heic file and choose "Set Desktop Picture".
+This will spin up a Playwright-controlled browser which takes screenshots for various times of day and uses [wallpapper](https://github.com/mczachurski/wallpapper) to assemble them into an `output.heic` file in the `images/` directory. To set this gradient as your wallpaper on macOS:
+
+1. Change your wallpaper to the **built-in** "Solar Gradients" wallpaper.
+2. Right click the `output.heic` file and choose "Set Desktop Picture".
 
 ## Development
 
@@ -49,7 +52,7 @@ npm start
 This will start a local server where you can view and edit the gradient. In a browser developer tools console, you can run
 `setAnimPct([pct])`, where `[pct]` is a number 0-100. This will set the gradient animation to a point in time, where 0 and 100 are nighttime and 50 is midday, and pause it there.
 
-You can edit the gradients in the [`app.css`](app.css) and tweak aspects of the animation and star generation in `app.js`(app.js).
+You can edit the gradients in the [`app.css`](app.css) and tweak aspects of the animation and star generation in [`app.js`](app.js).
 
 You can change the supported screen resolutions for the wallpaper generation in [`playwright.config.ts`](playwright.config.ts).
 
