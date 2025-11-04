@@ -25,8 +25,10 @@ Just run `npm install`. This will install dependencies and run a script which in
 ## Usage
 
 ```bash
-npm run generate-wallpaper --project=[PROJECT_NAME]
+npm run generate-wallpaper -- --project=[PROJECT_NAME]
 ```
+
+⚠️ Important: Make sure you don't forget to include the `--` before the `--project` flag in the command above!
 
 Replace `[PROJECT_NAME]` with one of:
 
