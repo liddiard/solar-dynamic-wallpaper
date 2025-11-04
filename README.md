@@ -8,7 +8,7 @@ I love the idea, but not so much the execution. Its daytime blue is far too satu
 
 This project generates a dynamic solar wallpaper that attempts to rectify these perceived shortcomings. And if you don't like my color choices, you can customize it with your own!
 
-See **Screenshots** for how it looks by default.
+See the [**Screenshots**](#screenshots) section for how it looks by default.
 
 ## Installation
 
