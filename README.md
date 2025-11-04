@@ -4,9 +4,9 @@
 
 macOS comes with a dynamic wallpaper called [Solar Gradients](https://www.jetsoncreative.com/24-hour-wallpaper-ios/gradient-ios) that changes throughout the day, displaying a sky color based on the sun's position.
 
-I love the idea, but not so much the execution. Its daytime blue is far too saturated to resemble a realistic sky, and the sunrise and sunset colors lack the diverse spectrum of hues that make for a picturesque vista. Personally, I'd also like to see some stars at night – on my computer display at least, if not outside in my artificial light-soaked city sky.
+I love the idea, but not so much the execution. Its daytime blue is far too saturated to resemble a realistic sky, and the sunrise and sunset colors lack the brilliant spectrum of hues that make for a picturesque vista. Personally, I'd also like to see some stars at night – on my computer display at least, if not outside in my artificial light-soaked city sky. 🥲
 
-This project generates a dynamic solar wallpaper that attempts to rectify these perceived shortcomings. And if you don't like my color choices, you can customize it with your own!
+This project generates a dynamic solar wallpaper that attempts to rectify these shortcomings. And if you don't like my color choices, you can customize it with your own!
 
 See the [**Screenshots**](#screenshots) section for how it looks by default.
 
