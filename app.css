@@ -1,0 +1,146 @@
+body {
+  margin: 0;
+}
+
+@property --top-color {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(0.4274 0.1139 279.32);
+}
+
+@property --top-pct {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 0%;
+}
+
+@property --mid-color {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(0.7396 0.1057 270.84);
+}
+
+@property --mid-pct {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 50%;
+}
+
+@property --bottom-color {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: oklch(0.9659 0.124 90.53);
+}
+
+@property --bottom-pct {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+
+@property --star-opacity {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 1;
+}
+
+@keyframes sky {
+  /* night */
+  0% {
+    --top-color: oklch(0 0 0);
+    --mid-color: oklch(0.1 0.06 260.84);
+    --bottom-color: oklch(0.18 0.04 270.53);
+    --mid-pct: 50%;
+    --star-opacity: 1;
+  }
+  /* dawn */
+  5% {
+    --top-color: oklch(0.1574 0.0639 239.32);
+    --mid-color: oklch(0.2596 0.0657 260.84);
+    --bottom-color: oklch(0.3059 0.05 310.53);
+    --mid-pct: 70%;
+    --star-opacity: 0.5;
+  }
+  /* sunrise */
+  10% {
+    --top-color: oklch(0.4574 0.1139 289.32);
+    --mid-color: oklch(0.7396 0.1057 280.84);
+    --bottom-color: oklch(0.8628 0.124 44.6);
+    --mid-pct: 55%;
+    --star-opacity: 0;
+  }
+  /* morning */
+  20% {
+    --top-color: oklch(0.7074 0.0978 250.32);
+    --mid-color: oklch(0.8396 0.0657 210.84);
+    --bottom-color: oklch(0.9659 0.0524 160.53);
+    --mid-pct: 65%;
+  }
+  /* midday */
+  50% {
+    --top-color: oklch(0.7823 0.0878 241.16);
+    --mid-color: oklch(0.9502 0.0752 200.96);
+    --bottom-color: oklch(0.9259 0.0421 196.63);
+    --mid-pct: 75%;
+  }
+  /* afternoon */
+  80% {
+    --top-color: oklch(0.7223 0.0978 251.16);
+    --mid-color: oklch(0.9002 0.0652 220.96);
+    --bottom-color: oklch(0.9259 0.0321 156.63);
+    --mid-pct: 70%;
+  }
+  /* sunset */
+  90% {
+    --top-color: oklch(0.4074 0.1539 279.32);
+    --mid-color: oklch(0.7396 0.1557 290.84);
+    --bottom-color: oklch(0.9 0.194 70.53);
+    --mid-pct: 50%;
+    --star-opacity: 0;
+  }
+  /* dusk */
+  95% {
+    --top-color: oklch(0.1574 0.0639 249.32);
+    --mid-color: oklch(0.2596 0.0657 260.84);
+    --bottom-color: oklch(0.3759 0.06 290.59);
+    --mid-pct: 60%;
+    --star-opacity: 0.5;
+  }
+  /* night */
+  100% {
+    --top-color: oklch(0 0 0);
+    --mid-color: oklch(0.1 0.06 260.84);
+    --bottom-color: oklch(0.18 0.04 270.53);
+    --mid-pct: 50%;
+    --star-opacity: 1;
+  }
+}
+
+#gradient,
+#starfield {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  animation: sky 60s forwards linear infinite;
+}
+
+#gradient {
+  background: linear-gradient(
+    in oklch,
+    var(--top-color) var(--top-pct),
+    var(--mid-color) var(--mid-pct),
+    var(--bottom-color) var(--bottom-pct)
+  );
+}
+
+#filter {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(100px);
+}
+
+#starfield {
+  mix-blend-mode: lighten;
+  opacity: var(--star-opacity);
+}

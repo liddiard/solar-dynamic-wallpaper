@@ -1,0 +1,1 @@
+The wallpaper (heic file) and its constituent screenshots (\*.png) checked into version control in this folder are for a 13" MacBook Air. You should generate your own for different screen resolutions by following the instructions in the [main README](README.md).

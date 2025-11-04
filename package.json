@@ -1,0 +1,25 @@
+{
+  "name": "sky-dyanamic-wallpaper",
+  "version": "1.0.0",
+  "description": "Generate a prettier version of macOS's \"Solar Gradients\" dynamic wallpaper.",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "start": "http-server -p 8765",
+    "generate-wallpaper": "npx playwright test",
+    "postinstall": "./setup.sh"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.56.1",
+    "@types/node": "^24.10.0"
+  },
+  "dependencies": {
+    "http-server": "^14.1.1"
+  },
+  "engines": {
+    "node": "22",
+    "npm": "11"
+  }
+}
