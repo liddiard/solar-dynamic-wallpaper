@@ -89,6 +89,6 @@ test.afterAll(async () => {
   } else {
     console.log(stdout);
     console.log("Generated dynamic wallpaper!");
-    console.log("Saved to file: output.heic");
+    console.log(`Saved to file: ${baseDir}/output.heic`);
   }
 });
