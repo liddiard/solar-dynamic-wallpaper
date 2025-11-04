@@ -1,7 +1,7 @@
 {
   "name": "sky-dyanamic-wallpaper",
   "version": "1.0.0",
-  "description": "Generate a prettier version of macOS's \"Solar Gradients\" dynamic wallpaper.",
+  "description": "Generate your own prettier version of macOS's \"Solar Gradients\" dynamic wallpaper.",
   "license": "ISC",
   "author": "",
   "type": "commonjs",
