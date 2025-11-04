@@ -40,7 +40,7 @@ This will spin up a Playwright-controlled browser which takes screenshots for va
 
 To set the generated gradient as your wallpaper on macOS:
 
-1. Change your wallpaper to the **built-in** "Solar Gradients" wallpaper.
+1. First, change your wallpaper to the **built-in** "Solar Gradients" wallpaper.
 2. Right click the `output.heic` file and choose "Set Desktop Picture".
 
 ## Development
