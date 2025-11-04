@@ -50,7 +50,7 @@ npm start
 This will start a local server where you can view and edit the gradient. In a browser developer tools console, you can run
 `setAnimPct([pct])`, where `[pct]` is a number 0-100. This will set the gradient animation to a point in time, where 0 and 100 are nighttime and 50 is midday, and pause it there.
 
-You can edit the gradients in the [`app.css`](app.css) and tweak aspects of the animation and star generation in [app.js`](app.js).
+You can edit the gradients in the [`app.css`](app.css) and tweak aspects of the animation and star generation in [app.js](app.js).
 
 You can change the supported screen resolutions for the wallpaper generation in [`playwright.config.ts`](playwright.config.ts).
 
