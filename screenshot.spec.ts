@@ -25,9 +25,9 @@ const animPcts = [
 // The "right" way to do this would be with some trigonometry, but right now I don't
 // care to be that precise. :)
 const customAlts: Record<number, number> = {
-  35: 35,
+  35: 30,
   50: 60,
-  65: 35,
+  65: 30,
 };
 
 const baseDir = "images";
@@ -88,7 +88,7 @@ test.afterAll(async () => {
     console.error(stderr);
   } else {
     console.log(stdout);
-    console.log("Generated dynamic wallpaper!");
-    console.log(`Saved to file: ${baseDir}/output.heic`);
+    console.log("✅ Generated dynamic wallpaper!");
+    console.log(`🌅 Saved to file: ${baseDir}/output.heic`);
   }
 });
