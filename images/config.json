@@ -7,7 +7,7 @@
   },
   {
     "fileName": "sky-2.5.png",
-    "altitude": -14.5,
+    "altitude": -14,
     "azimuth": 90
   },
   {
@@ -22,17 +22,17 @@
   },
   {
     "fileName": "sky-10.png",
-    "altitude": 2,
+    "altitude": 0,
     "azimuth": 90
   },
   {
     "fileName": "sky-15.png",
-    "altitude": 13,
+    "altitude": 10,
     "azimuth": 90
   },
   {
     "fileName": "sky-20.png",
-    "altitude": 24,
+    "altitude": 20,
     "azimuth": 90
   },
   {
@@ -42,7 +42,7 @@
   },
   {
     "fileName": "sky-50.png",
-    "altitude": 60,
+    "altitude": 45,
     "azimuth": 90
   },
   {
@@ -52,17 +52,17 @@
   },
   {
     "fileName": "sky-80.png",
-    "altitude": 24,
+    "altitude": 20,
     "azimuth": 270
   },
   {
     "fileName": "sky-85.png",
-    "altitude": 13,
+    "altitude": 10,
     "azimuth": 270
   },
   {
     "fileName": "sky-90.png",
-    "altitude": 2,
+    "altitude": 0,
     "azimuth": 270
   },
   {
@@ -77,7 +77,7 @@
   },
   {
     "fileName": "sky-97.5.png",
-    "altitude": -14.5,
+    "altitude": -14,
     "azimuth": 270
   },
   {
