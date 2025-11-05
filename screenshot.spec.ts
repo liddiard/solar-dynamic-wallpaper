@@ -22,13 +22,13 @@ const animPctToSunAlt: Record<string, number> = {
   5: -9,
   7.5: -3.5,
   10: 0,
-  15: 10,
-  20: 20,
+  15: 5,
+  20: 15,
   35: 30,
   50: 45,
   65: 30,
-  80: 20,
-  85: 10,
+  80: 15,
+  85: 5,
   90: 0,
   92.5: -3.5,
   95: -9,
@@ -75,14 +75,18 @@ test.afterAll(async () => {
   console.log("Saved config.json");
 
   // Create the dynamic wallpaper
-  const { stdout, stderr } = await exec("wallpapper -i config.json", {
-    cwd: baseDir,
-  });
+  const fileName = "sky_dynamic.heic";
+  const { stdout, stderr } = await exec(
+    `wallpapper -i config.json && mv output.heic ${fileName}`,
+    {
+      cwd: baseDir,
+    }
+  );
   if (stderr) {
     console.error(stderr);
   } else {
     console.log(stdout);
     console.log("✅ Generated dynamic wallpaper!");
-    console.log(`🌅 Saved to file: ${baseDir}/output.heic`);
+    console.log(`🌅 Saved to file: ${baseDir}/${fileName}`);
   }
 });

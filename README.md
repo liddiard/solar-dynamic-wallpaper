@@ -36,12 +36,12 @@ Replace `[PROJECT_NAME]` with one of:
 - `macbook-pro-14`
 - `macbook-pro-16`
 
-This will spin up a Playwright-controlled browser which takes screenshots for various times of day and uses [wallpapper](https://github.com/mczachurski/wallpapper) to assemble them into an `output.heic` file in the `images/` directory.
+This will spin up a Playwright-controlled browser which takes screenshots for various times of day and uses [wallpapper](https://github.com/mczachurski/wallpapper) to assemble them into an `sky_dynamic.heic` file in the `images/` directory.
 
 To set the generated gradient as your wallpaper on macOS:
 
 1. First, change your wallpaper to the **built-in** "Solar Gradients" wallpaper.
-2. Right click the `output.heic` file and choose "Set Desktop Picture".
+2. Right click the `sky_dynamic.heic` file and choose "Set Desktop Picture".
 
 ## Development
 
