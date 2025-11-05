@@ -19,7 +19,7 @@ interface SolarConfigEntry {
 const animPctToSunAlt: Record<string, number> = {
   0: -20,
   2.5: -14,
-  5: -9,
+  5: -8,
   7.5: -2,
   10: 0,
   15: 7.5,
@@ -31,7 +31,7 @@ const animPctToSunAlt: Record<string, number> = {
   85: 7.5,
   90: 0,
   92.5: -2,
-  95: -9,
+  95: -8,
   97.5: -14,
   100: -20,
 };
