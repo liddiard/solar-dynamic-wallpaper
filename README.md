@@ -1,6 +1,6 @@
 # 🌅🌌 Solar Dynamic Wallpaper
 
-## Generate your own prettier version of macOS's "Solar Gradients" dynamic wallpaper.
+## Generate your own, prettier version of macOS's "Solar Gradients" dynamic wallpaper.
 
 macOS comes with a dynamic wallpaper called [Solar Gradients](https://www.jetsoncreative.com/24-hour-wallpaper-ios/gradient-ios) that changes throughout the day, displaying a sky color based on the sun's position.
 
