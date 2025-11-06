@@ -38,6 +38,12 @@ body {
   initial-value: 100%;
 }
 
+@property --blur {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 10px;
+}
+
 @property --star-opacity {
   syntax: "<number>";
   inherits: false;
@@ -52,6 +58,7 @@ body {
     --bottom-color: oklch(0.18 0.04 270.53);
     --mid-pct: 50%;
     --star-opacity: 1;
+    --blur: 10px;
   }
   /* dawn */
   5% {
@@ -68,6 +75,7 @@ body {
     --bottom-color: oklch(0.8628 0.124 44.6);
     --mid-pct: 55%;
     --star-opacity: 0;
+    --blur: 96px;
   }
   /* morning */
   20% {
@@ -97,6 +105,7 @@ body {
     --bottom-color: oklch(0.9 0.194 70.53);
     --mid-pct: 50%;
     --star-opacity: 0;
+    --blur: 96px;
   }
   /* dusk */
   95% {
@@ -113,14 +122,14 @@ body {
     --bottom-color: oklch(0.18 0.04 270.53);
     --mid-pct: 50%;
     --star-opacity: 1;
+    --blur: 10px;
   }
 }
 
 #gradient,
 #starfield {
-  position: fixed;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   animation: sky 60s forwards linear infinite;
 }
 
@@ -134,10 +143,15 @@ body {
 }
 
 .filter {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  backdrop-filter: blur(100px);
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  backdrop-filter: blur(96px);
+}
+
+#stars {
+  background-color: black;
 }
 
 #starfield {

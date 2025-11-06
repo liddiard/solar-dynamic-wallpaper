@@ -90,5 +90,3 @@ function drawStars() {
 }
 
 drawStars()
-
-window.addEventListener('resize', drawStars)

@@ -8,10 +8,13 @@ import { defineConfig, devices } from "@playwright/test";
 // import path from 'path';
 // dotenv.config({ path: path.resolve(__dirname, '.env') });
 
+const device = devices["Desktop Chrome"];
+
 /**
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
+  timeout: 600_000,
   testDir: ".",
   /* Run tests in files in parallel */
   fullyParallel: true,
@@ -37,7 +40,7 @@ export default defineConfig({
     {
       name: "macbook-air-13",
       use: {
-        ...devices["Desktop Safari"],
+        ...device,
         viewport: {
           width: 2560 / 2,
           height: 1664 / 2,
@@ -48,7 +51,7 @@ export default defineConfig({
     {
       name: "macbook-pro-14",
       use: {
-        ...devices["Desktop Safari"],
+        ...device,
         viewport: {
           width: 3024 / 2,
           height: 1964 / 2,
@@ -59,7 +62,7 @@ export default defineConfig({
     {
       name: "macbook-pro-16",
       use: {
-        ...devices["Desktop Safari"],
+        ...device,
         viewport: {
           width: 3456 / 2,
           height: 2234 / 2,

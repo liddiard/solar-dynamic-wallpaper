@@ -20,7 +20,7 @@ See the [**Screenshots**](#screenshots) section for how it looks by default.
 
 ### Setup
 
-Just run `npm install`. This will install dependencies and run a script which installs [mczachurski/wallpapper](https://github.com/mczachurski/wallpapper), the application which will compile the gradients into a dynamic wallpaper file.
+Just run `npm install`. This will install dependencies and run a script which installs [ImageMagick](https://imagemagick.org/) and [mczachurski/wallpapper](https://github.com/mczachurski/wallpapper), the application which will compile the gradients into a dynamic wallpaper file.
 
 ## Usage
 
@@ -36,7 +36,7 @@ Replace `[PROJECT_NAME]` with one of:
 - `macbook-pro-14`
 - `macbook-pro-16`
 
-This will spin up a Playwright-controlled browser which takes screenshots for various times of day and uses [wallpapper](https://github.com/mczachurski/wallpapper) to assemble them into an `sky_dynamic.heic` file in the `images/` directory.
+This will spin up a Playwright-controlled browser which takes screenshots for various times of day. It then uses ImageMagick to [dither](https://en.wikipedia.org/wiki/Dither) the gradients to prevent [banding](<(https://en.wikipedia.org/wiki/Colour_banding)>). Lastly, it calls [wallpapper](https://github.com/mczachurski/wallpapper) to assemble the processed images into an `sky_dynamic.heic` file in the `images/` directory.
 
 To set the generated gradient as your wallpaper on macOS:
 
@@ -62,7 +62,7 @@ You can change how many gradients are generated and from which points of the ani
 
 Few random notes:
 
-- We take screenshots with Safari becuase it's the only major browser that performs gradient [dithering](https://en.wikipedia.org/wiki/Dither). This (largely) prevents the [banding](https://en.wikipedia.org/wiki/Colour_banding) which other browsers will exhibit.
+- Safari (WebKit) is the only major browser that dithers gradients, but unfortunately its use in Playwright [has a bug](https://github.com/microsoft/playwright/issues/28363) which prevents the `backdrop-filter: blur` from applying. Hence we take screenshots in Chrome (which correctly renders the blur) and then use ImageMagick to smooth out the banding.
 - You probably want the wallpaper resolution to exactly match your screen resolution. This is because the stars are drawn to be exactly one pixel, making them a bright point of light. They will look more blurry if the resolutions differ by even a pixel.
 - If you're unsatisfied with the subtle banding that can still appear in the final product, you can further dither the screenshots in image editing tools like Photoshop or GIMP. Just note that this requires handling the stars as a separate layer.
 - I'm using the OKLCH color space for [gradient interpolation](https://developer.mozilla.org/en-US/docs/Web/CSS/color-interpolation-method) because I find it results in a wider (and generally more realistic) range of hues – especially around sunrise and sunset – without adding a ton of color stops. However, it does result in some non-contiguous, weird-looking behavior at certain points in the animation. You can use the OKLAB color space to fix the non-contiguousness; the colors are just a bit more muted.

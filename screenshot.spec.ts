@@ -38,7 +38,8 @@ const animPctToSunAlt: Record<string, number> = {
 
 const baseDir = "images";
 
-const getFileName = (animPct: number) => `sky-${animPct}.png`;
+const getSkyFileName = (animPct: number) => `sky-${animPct}.png`;
+const getStarsFileName = (animPct: number) => `stars-${animPct}.png`;
 
 test("generate wallpapers", async ({ page }) => {
   await page.goto("/");
@@ -48,25 +49,31 @@ test("generate wallpapers", async ({ page }) => {
   for (const animPct of animPcts) {
     await page.evaluate((animPct) => window.setAnimPct(animPct), animPct);
     await page.waitForTimeout(500);
-    const fileName = getFileName(animPct);
-    await page.screenshot({
+    let fileName = getSkyFileName(animPct);
+    await page.locator("#sky").screenshot({
       path: `${baseDir}/${fileName}`,
-      fullPage: true,
+    });
+    console.log(`Saved ${fileName}`);
+    fileName = getStarsFileName(animPct);
+    await page.locator("#stars").screenshot({
+      path: `${baseDir}/${fileName}`,
     });
     console.log(`Saved ${fileName}`);
   }
 });
 
 test.afterAll(async () => {
+  const animPcts = Object.keys(animPctToSunAlt)
+    .map(Number)
+    .toSorted((a, b) => a - b);
+
   // Generate the image metadata for at what altitude to apply each wallpaper
   // https://github.com/mczachurski/wallpapper?tab=readme-ov-file#solar
-  const solarConfig: SolarConfigEntry[] = Object.entries(animPctToSunAlt)
-    .toSorted(([pctA], [pctB]) => Number(pctA) - Number(pctB))
-    .map(([pct, altitude]) => ({
-      fileName: getFileName(Number(pct)),
-      altitude,
-      azimuth: Number(pct) > 50 ? 270 : 90,
-    }));
+  const solarConfig: SolarConfigEntry[] = animPcts.map((pct) => ({
+    fileName: getSkyFileName(Number(pct)),
+    altitude: animPctToSunAlt[pct],
+    azimuth: Number(pct) > 50 ? 270 : 90,
+  }));
   solarConfig[0].isPrimary = true;
   await fs.writeFile(
     `${baseDir}/config.json`,
@@ -74,10 +81,33 @@ test.afterAll(async () => {
   );
   console.log("Saved config.json");
 
+  // Process and composite the sky and stars images
+  for (const animPct of animPcts) {
+    const skyFileName = getSkyFileName(animPct);
+    const starsFileName = getStarsFileName(animPct);
+    console.log(`Processing ${skyFileName}`);
+    const { stderr } = await exec(
+      `magick ${skyFileName} -spread 32 ${skyFileName} && 
+       magick ${skyFileName} ${starsFileName} -compose lighten -composite ${skyFileName}`,
+      {
+        cwd: baseDir,
+      }
+    );
+    if (stderr) {
+      console.error(stderr);
+    } else {
+      console.log(`Processed ${skyFileName}`);
+    }
+  }
+
+  console.log('Cleaning up temporary "stars-*" files...');
+  await exec("rm stars-*.png", { cwd: baseDir });
+
   // Create the dynamic wallpaper
   const fileName = "sky_dynamic.heic";
+  console.log(`Generating dynamic wallpaper...`);
   const { stdout, stderr } = await exec(
-    `wallpapper -i config.json && mv output.heic ${fileName}`,
+    "wallpapper -i config.json && mv output.heic sky_dynamic.heic",
     {
       cwd: baseDir,
     }
