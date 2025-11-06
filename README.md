@@ -36,7 +36,7 @@ Replace `[PROJECT_NAME]` with one of:
 - `macbook-pro-14`
 - `macbook-pro-16`
 
-This will spin up a Playwright-controlled browser which takes screenshots for various times of day. It then uses ImageMagick to [dither](https://en.wikipedia.org/wiki/Dither) the gradients to prevent [banding](<(https://en.wikipedia.org/wiki/Colour_banding)>). Lastly, it calls [wallpapper](https://github.com/mczachurski/wallpapper) to assemble the processed images into an `sky_dynamic.heic` file in the `images/` directory.
+This will spin up a Playwright-controlled browser which takes screenshots for various times of day. It then uses ImageMagick to [dither](https://en.wikipedia.org/wiki/Dither) the gradients to prevent [banding](https://en.wikipedia.org/wiki/Colour_banding). Lastly, it calls [wallpapper](https://github.com/mczachurski/wallpapper) to assemble the processed images into an `sky_dynamic.heic` file in the `images/` directory.
 
 To set the generated gradient as your wallpaper on macOS:
 
