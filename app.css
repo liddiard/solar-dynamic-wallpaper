@@ -147,7 +147,7 @@ body {
   top: 0;
   width: 100vw;
   height: 100vh;
-  backdrop-filter: blur(96px);
+  backdrop-filter: blur(100px);
 }
 
 #stars {

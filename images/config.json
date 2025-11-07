@@ -22,7 +22,7 @@
   },
   {
     "fileName": "sky-10.png",
-    "altitude": 0,
+    "altitude": 2,
     "azimuth": 90
   },
   {
@@ -62,7 +62,7 @@
   },
   {
     "fileName": "sky-90.png",
-    "altitude": 0,
+    "altitude": 2,
     "azimuth": 270
   },
   {
