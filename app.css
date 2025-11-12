@@ -66,7 +66,7 @@ body {
     --mid-color: oklch(0.2596 0.0657 260.84);
     --bottom-color: oklch(0.3059 0.05 310.53);
     --mid-pct: 70%;
-    --star-opacity: 0.5;
+    --star-opacity: 0.8;
   }
   /* sunrise */
   10% {
@@ -113,7 +113,7 @@ body {
     --mid-color: oklch(0.2596 0.0657 260.84);
     --bottom-color: oklch(0.3759 0.06 290.59);
     --mid-pct: 60%;
-    --star-opacity: 0.5;
+    --star-opacity: 0.8;
   }
   /* night */
   100% {
